@@ -21,7 +21,7 @@ namespace EncryptionProject.Controllers
         public IActionResult Index(string plainText)
         {
             ViewBag.PalinText = plainText;
-            var encryptedText = plainText.EncryptString(EncryptionKey);
+            var encryptedText = plainText?.EncryptString(EncryptionKey);
             return View("index",encryptedText);
         }
     }
