@@ -1,0 +1,32 @@
+﻿@model string
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="col-6 offset-3">
+    <form asp-controller="Home" asp-action="Index" method="post">
+        <div class="col-12 pt-5">
+            <label class="col-md-12">متن مورد نظر را وارد کنید :</label>
+            <div class="pt-5">
+                <input class="form-control" name="plainText" id="plainText" />
+            </div>
+        </div>
+
+        <div class="col-12 text-center pt-5">
+            <button type="submit">انکریپت کردن متن ورودی</button>
+        </div>
+
+        @if (Model != null)
+        {
+            <div class="col-12 pt-3">
+                متن قبل از انکریپت:
+            <br />
+            <b>@ViewBag.PalinText</b>
+            <br />
+            متن بعد از انکریپت:
+            <br />
+            <b class="encrypted">@Model</b>
+        </div>
+        }
+    </form>
+</div>
